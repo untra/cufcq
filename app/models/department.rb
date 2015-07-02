@@ -14,23 +14,22 @@ class Department < ActiveRecord::Base
   	searchable do
   		text :name
   		text :long_name
-  	end 
+  	end
 
-  def to_param
-    slug
-  end
+	def to_param
+		slug
+	end
 
-  def generate_slug
-    puts "generating department slug!"
-    # puts "#{self.instructor_last.titleize}, #{self.instructor_first.titleize}".parameterize
-    self.slug ||= "#{self.name}".parameterize
-    puts "slug generated"
-    return self.slug
-  end
-
+	def generate_slug
+		puts "generating department slug!"
+		# puts "#{self.instructor_last.titleize}, #{self.instructor_first.titleize}".parameterize
+		self.slug ||= "#{self.name}".parameterize
+		puts "slug generated"
+		return self.slug
+	end
 
   	def instructor_scorecards
-  		    puts "$$$$$$$$$$$$$$$$"
+  		puts "$$$$$$$$$$$$$$$$"
   		return self.data["instructors_json"] || build_instructor_scorecards.to_json
   	end
 
@@ -53,7 +52,6 @@ class Department < ActiveRecord::Base
     	end
     	return arr
   	end
-
 
   	def cache_update_counts
     	self.update_attribute(:instructors_count, self.instructors.count)
@@ -160,14 +158,6 @@ class Department < ActiveRecord::Base
 		self.save
 	end
 
-
-
-
-
-
-
-
-
 	def average_courseoverall
 		return self.fcqs.average(:courseoverall).round(1)
 	end
@@ -220,6 +210,7 @@ class Department < ActiveRecord::Base
 		set.sort_by{|x| x.average_instructoroverall}
 	end
 
+	#TODO We should cook up our own instructor rank functionality
 	def set_rank
 		ibct = instructors_by_courses_taught
 		result = Hash.new
@@ -240,25 +231,30 @@ class Department < ActiveRecord::Base
 		@instructors_rank.include?(a) ? @instructors_rank[a] : "N/A"
 	end
 
-
 	def course_count
 		self.courses.count
 	end
+
 	def course_ld_count
 		self.courses
 	end
+
 	def course_ud_count
 		self.courses.where("crse = ?",3000...5000).group("crse").to_a
 	end
+
 	def course_gd_count
 		self.courses.where("crse = ?",5000...10000).group("crse").to_a
 	end
+
 	def instructor_total_count
 		self.instructors.count
 	end
+
 	def instructor_ta_count
 		self.instructors.count
 	end
+
 	def instructor_nonta_count
 		self.instructors.count
 	end

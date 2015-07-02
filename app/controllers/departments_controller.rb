@@ -4,19 +4,7 @@ class DepartmentsController < ApplicationController
   before_filter :find_department, only: [:show, :edit, :update, :destroy, :instructors, :courses]
   # GET /departments
   # GET /departments.json
-  # def index
-  #   @departments = Department.all
-  # end
 
-
-
-  # def index
-  #   @search = Department.search do
-  #     fulltext params[:search]
-  #     paginate :page => 1, :per_page => 1000
-  #   end
-  #   @departments = Department.where(id: @search.results.map(&:id)).page(params[:page]).per_page(10).order(sort_column + " " + sort_direction)
-  # end
   def index
     page = params[:page] || 1
     @search = Department.search do
@@ -39,21 +27,6 @@ class DepartmentsController < ApplicationController
   #   # render :json => @instructor.scorecard.to_json
   # end
 
-  # def index
-  #   if params[:search] != ''
-  #     puts "#{params[:search]}"
-  #     @search = Department.search do
-  #       fulltext params[:search]
-  #       paginate :page => 2, :per_page => 10
-  #     end
-  #     @departments = @search.results
-  #   else 
-  #     @departments = Department.paginate :page => params[:page], :per_page => 10, :order => 'name ASC'
-  #   end
-  # end
-
-  # GET /departments/1
-  # GET /departments/1.json
   def show
   end
 
@@ -122,7 +95,7 @@ class DepartmentsController < ApplicationController
     def sort_column
       Course.column_names.include?(params[:sort]) ? params[:sort] : "name"
     end
-    
+
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
