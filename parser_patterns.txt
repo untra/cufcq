@@ -1,0 +1,64 @@
+---
+#{COURSE}             ENGL 1234
+#{DEPT}               ENGL
+#{DEPTLONGNAME}       English
+#{GRADE}              B+
+#{X}                  44
+---
+
+Meets MAPS requirement for English.
+Meets MAPS requirement for mathematics.
+Meets MAPS requirement for natural science.
+Meets MAPS requirement for social science.
+Meets MAPS requirement for foreign language.
+
+May be repeated up to #{X} total credit hours.
+May be repeated for a total of #{X} units for different topics.
+May not be taken concurrently with #{COURSE}.
+May not be repeated.
+Not open to graduate students.
+Does not count as Creative Writing workshop credit.
+Course is only offered through the Student Academic Service Center.
+Approved for arts and sciences core curriculum: human diversity.
+Approved for arts and sciences core curriculum: literature and the arts.
+Approved for arts and sciences core curriculum: written communication.
+Approved for arts and sciences core curriculum: U.S. context.
+Approved for arts and sciences core curriculum: natural science.
+Approved for arts and sciences core curriculum: ideals and values.
+Approved for arts and sciences core curriculum: contemporary societies.
+Approved for arts and sciences core curriculum: historical context.
+Approved for arts and sciences core curriculum: foreign language.
+Approved for arts and sciences core curriculum: quantitative reasoning and mathematical skills.
+Credit not granted for this course and #{COURSE}.
+Formerly #{COURSE}.
+Similar to #{COURSE}.
+Same as #{COURSE}.
+Required for all #{DEPTLONGNAME} majors.
+Topics vary each semester.
+Specially design for #{DEPTLONGNAME} majors.
+Specially designed for #{DEPTLONGNAME} majors.
+Recommended prereqs., #{COURSE} or #{COURSE} and #{COURSE}.
+Department enforced prereq., one year high school algebra.
+Department enforced requisite: 3.0 GPA and faculty supervision.
+restricted to prospective elementary teachers.
+1 1/2 years of high school algebra and 1 year of high school geometry.
+an ALEKS math score of 46% or greater.
+The combination MATH 1110 and 1120 is approved for arts and sciences core curriculum: quantitative reasoning and mathematical skills.
+Approved for GT-MA1.
+
+
+
+Requisites:
+  Requires prerequisite course of #{COURSE} (minimum grade #{GRADE}).
+  Requires prerequisite courses of #{COURSE} and #{COURSE} (all minimum grade #{GRADE})
+  57-180 credits (Juniors or Seniors).
+  Restricted to students with 27-180 credits (Sophomores, Juniors or Seniors)
+  Restricted to students with 0-56 credits (Freshmen or Sophomore) College of Arts and Sciences majors only.
+  Restricted to #{DEPTLONGNAME} (#{DEPT}) majors only.
+  Restricted to Creative Writing minor students or students with a sub plan of Creative Writing.
+  Restricted to Learning Assistants in Math.
+  Requires a corequisite course of #{COURSE}.
+  #{DEPTLONGNAME} (#{DEPT}) and #{DEPTLONGNAME} (#{DEPT}) majors are excluded from taking this class.
+  #{DEPTLONGNAME} (#{DEPT}) majors are excluded from taking this class.
+  Requisites: Prereq. courses of MATH 2001 and one of the following: MATH 3001, 3110, 3120, 3130, 3140, 3170, 3210, 3510, 3850, 4000, 4001, 4120, 4140, 4200, 4210, 4230, 4320, 4330, 4430, 4440, 4450, 4710, 4510, 4520, 4540, 4650, 4660 or 4820 (all min grade C-).
+  Restricted to English (ENGL), Humanities (HUMN), Theatre (THTR or TBFA) majors only or Creative Writing (CRW) minor students only.
