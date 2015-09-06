@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426181806) do
+ActiveRecord::Schema.define(version: 20150906214615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150426181806) do
     t.integer  "instructors_count",      default: 0
     t.integer  "fcqs_count",             default: 0
     t.string   "slug"
+    t.string   "campus"
   end
 
   add_index "courses", ["slug"], name: "index_courses_on_slug", using: :btree
@@ -137,6 +138,7 @@ ActiveRecord::Schema.define(version: 20150426181806) do
     t.integer  "courses_count",    default: 0
     t.integer  "fcqs_count",       default: 0
     t.string   "slug"
+    t.string   "campus"
   end
 
   add_index "instructors", ["slug"], name: "index_instructors_on_slug", using: :btree

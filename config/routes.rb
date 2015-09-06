@@ -5,7 +5,8 @@ Cufcq::Application.routes.draw do
   get "errors/internal_server_error"
   root 'static_pages#home'
 
-  #Users don't need to access all of the fcqs. This adds to much stress on the server. 
+  #Users don't need to access all of the fcqs. This adds to much stress on the server.
+  namespaces = ['bd', 'dn', 'cs']
 
   constraints subdomain: 'www' do
     get ':any', to: redirect(subdomain: nil, path: '/%{any}'), any: /.*/
@@ -16,6 +17,7 @@ Cufcq::Application.routes.draw do
   match '/disclaimer', to: 'static_pages#disclaimer',    via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',    to: 'static_pages#about',    via: 'get'
+  match '/salads',    to: 'static_pages#about',    via: 'get'
   match '/ratemybuffs',    to: 'static_pages#ratemybuffs',    via: 'get'
 
 
@@ -26,8 +28,37 @@ Cufcq::Application.routes.draw do
     get 'departments/:id/courses', to: 'departments#courses'
   resources :instructors, :except => [:new, :edit, :delete]
     get 'instructors/:id/scorecard', to: 'instructors#scorecard'
-  # resources :instructors_test
   resources :fcqs, :except => [:new, :edit, :delete]
+
+  # namespace :bd do
+  #   resources :fcqs, :except => [:new, :edit, :delete]
+  # end
+  #
+  # namespace :dn do
+  #   resources :fcqs, :except => [:new, :edit, :delete]
+  # end
+  #
+  # namespace :cs do
+  #   resources :fcqs, :except => [:new, :edit, :delete]
+  # end
+
+  # for name in namespaces
+  #   scope module: name do
+  #     resources :fcqs, :except => [:new, :edit, :delete]
+  #   end
+  # end
+
+  scope '/:campus' do
+    resources :courses, :except => [:new, :edit, :delete]
+      get 'courses/:id/scorecard', to: 'courses#scorecard'
+    resources :departments, :except => [:new, :edit, :delete]
+      get 'departments/:id/instructors', to: 'departments#instructors'
+      get 'departments/:id/courses', to: 'departments#courses'
+    resources :instructors, :except => [:new, :edit, :delete]
+      get 'instructors/:id/scorecard', to: 'instructors#scorecard'
+    resources :fcqs, :except => [:new, :edit, :delete]
+  end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

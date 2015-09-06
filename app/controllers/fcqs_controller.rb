@@ -5,7 +5,7 @@ class FcqsController < ApplicationController
   # GET /fcqs.json
 
 
-  #TODO: Get rid of this in production? 
+  #TODO: Get rid of this in production?
   def index
     paginate :page => 1, :per_page => 1000
     @fcqs = Fcq.all.page(params[:page]).per_page(10)
@@ -14,6 +14,7 @@ class FcqsController < ApplicationController
   # GET /fcqs/1
   # GET /fcqs/1.json
   def show
+    # puts params
   end
 
   # GET /fcqs/new

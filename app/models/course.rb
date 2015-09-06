@@ -250,6 +250,7 @@ class Course < ActiveRecord::Base
     data['hoursperwkinclclass'] = r.mode
     r = fcqs.average(:howmuchlearned) || 0.0
     data['average_how_much_learned'] = r.round(1)
+    self.campus = fcqs.pluck(:campus).mode
     cache_instructor_count
     self.data = data
     save

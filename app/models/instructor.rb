@@ -8,6 +8,7 @@ class Instructor < ActiveRecord::Base
   self.per_page = 10
 
   searchable do
+    string :campus
     string :instructor_first
     string :instructor_last
     text :instructor_first
@@ -84,10 +85,6 @@ class Instructor < ActiveRecord::Base
 
   def full_name
     name.split.map(&:capitalize).join(' ')
-  end
-
-  def campus
-    department.campus
   end
 
   def department_string
@@ -260,13 +257,11 @@ class Instructor < ActiveRecord::Base
     @availability_data = []
     @instrrespect_data = []
     @instreffective_data = []
-
     #records.each {|k,v| fixedrecords[Fcq.semterm_from_int(k)] = v.to_f.round(1)}
     overalls.each { |k, v| @overall_data << [k, v.to_f.round(1)] }
     avails.each { |k, v| @availability_data << [k, v.to_f.round(1)] }
     effects.each { |k, v| @instreffective_data << [k, v.to_f.round(1)] }
     instrrespects.each { |k, v| @instrrespect_data << [k, v.to_f.round(1)] }
-
     data = {}
     data['overall_data'] = @overall_data
     data['availability_data'] = @availability_data
@@ -283,6 +278,7 @@ class Instructor < ActiveRecord::Base
     data['earliest_class'] = fcqs.minimum(:yearterm)
     data['instructor_group'] = fcqs.pluck(:instr_group).mode
     self.data = data
+    self.campus = fcqs.pluck(:campus).mode
     cache_course_count
     save
   end

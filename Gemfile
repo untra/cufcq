@@ -5,7 +5,7 @@ gem 'rails', '4.0.0'
 # gem 'bootstrap-sass', '2.3.2.0'
 # Use sqlite3 as the database for Active Record
 group :development do
-  gem 'debugger', group: [:development, :test]
+  gem 'debugger'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'rspec-rails'

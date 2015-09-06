@@ -11,7 +11,7 @@ class InstructorsController < ApplicationController
   #       fulltext params[:search]
   #     end
   #     @instructors = @search.results
-  #   else 
+  #   else
   #     @instructors = Instructor.all
   #   end
   # end
@@ -20,13 +20,14 @@ class InstructorsController < ApplicationController
     page = params[:page] || 1
     @search = Instructor.search do
       fulltext params[:search]
+      with(:campus, params[:campus].upcase) if params[:campus].present?
       # order_by(sort_column , sort_direction)
       paginate :page => page, :per_page => 10
     end
     @instructors = @search.results
   end
 
-  def show 
+  def show
   end
 
   def scorecard
@@ -103,14 +104,14 @@ class InstructorsController < ApplicationController
     def sort_column
       # puts params[:sort]
       # puts Course.first.data.include?("data -> #{params[:sort]}")
-      if Instructor.column_names.include?(params[:sort]) 
+      if Instructor.column_names.include?(params[:sort])
         return params[:sort]
       elsif Instructor.first.data.include?(params[:sort])
         return "data -> '#{params[:sort]}'"
       end
       return "instructor_last"
     end
-    
+
     def sort_direction
       # puts "includes direction = " + (%w[asc desc].include?(params[:direction])).to_s
       if %w[asc desc].include?(params[:direction])
