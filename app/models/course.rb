@@ -13,7 +13,7 @@ class Course < ActiveRecord::Base
   end
 
   validates :course_title, :crse, :subject, presence: true
-  validates_uniqueness_of :crse, scope: [:subject]
+  validates_uniqueness_of :crse, scope: [:subject, :campus]
   validates :slug, uniqueness: true, presence: true
   before_validation :generate_slug
 

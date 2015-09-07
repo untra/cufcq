@@ -30,7 +30,7 @@ class Fcq < ActiveRecord::Base
   validates :subject, :crse, length: { is: 4 }
   validates :sec, length: { maximum: 3 }
   validates_with FcqValidator
-  validates_uniqueness_of :sec, scope: [:crse, :subject, :yearterm, :instructor_last, :instructor_first]
+  validates_uniqueness_of :sec, scope: [:crse, :subject, :yearterm, :campus, :instructor_last, :instructor_first]
   # before_save :update_counters
   ##################################
 

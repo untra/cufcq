@@ -29,6 +29,7 @@ class CoursesController < ApplicationController
     page = params[:page] || 1
     @search = Course.search do
       fulltext params[:search]
+      with(:campus, params[:campus].upcase) if params[:campus].present?
       # order_by(sort_column , sort_direction)
       paginate :page => page, :per_page => 10
     end
@@ -108,14 +109,14 @@ class CoursesController < ApplicationController
     def sort_column
       # puts params[:sort]
       # puts Course.first.data.include?("data -> #{params[:sort]}")
-      if Course.column_names.include?(params[:sort]) 
+      if Course.column_names.include?(params[:sort])
         return params[:sort]
       elsif Course.first.data.include?(params[:sort])
         return "data -> '#{params[:sort]}'"
       end
       return "course_title"
     end
-    
+
     def sort_direction
       # puts "includes direction = " + (%w[asc desc].include?(params[:direction])).to_s
       if %w[asc desc].include?(params[:direction])

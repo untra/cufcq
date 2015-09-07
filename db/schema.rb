@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150906214615) do
   create_table "courses", force: true do |t|
     t.integer  "department_id"
     t.string   "course_title"
+    t.string   "campus"
     t.integer  "crse"
     t.string   "subject"
     t.string   "corrected_course_title"
@@ -130,6 +131,7 @@ ActiveRecord::Schema.define(version: 20150906214615) do
 
   create_table "instructors", force: true do |t|
     t.integer  "department_id"
+    t.string   "campus"
     t.string   "instructor_first"
     t.string   "instructor_last"
     t.datetime "created_at"

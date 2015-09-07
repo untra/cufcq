@@ -21,6 +21,7 @@ class DepartmentsController < ApplicationController
     page = params[:page] || 1
     @search = Department.search do
       fulltext params[:search]
+      with(:campus, params[:campus].upcase) if params[:campus].present?
       # order_by(sort_column , sort_direction)
       paginate :page => page, :per_page => 10
     end
@@ -47,7 +48,7 @@ class DepartmentsController < ApplicationController
   #       paginate :page => 2, :per_page => 10
   #     end
   #     @departments = @search.results
-  #   else 
+  #   else
   #     @departments = Department.paginate :page => params[:page], :per_page => 10, :order => 'name ASC'
   #   end
   # end
@@ -122,7 +123,7 @@ class DepartmentsController < ApplicationController
     def sort_column
       Course.column_names.include?(params[:sort]) ? params[:sort] : "name"
     end
-    
+
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end

@@ -21,7 +21,7 @@ class Instructor < ActiveRecord::Base
   # has_many :courses
   has_many :courses, -> { distinct }, through: :fcqs, counter_cache: true
 
-  validates_uniqueness_of :instructor_first, scope: [:instructor_last]
+  validates_uniqueness_of :instructor_first, scope: [:instructor_last, :campus]
   # added code creates an alternate custom route for accessing our instructors by name
   validates :slug, uniqueness: true, presence: true
   before_validation :generate_slug
@@ -278,7 +278,6 @@ class Instructor < ActiveRecord::Base
     data['earliest_class'] = fcqs.minimum(:yearterm)
     data['instructor_group'] = fcqs.pluck(:instr_group).mode
     self.data = data
-    self.campus = fcqs.pluck(:campus).mode
     cache_course_count
     save
   end

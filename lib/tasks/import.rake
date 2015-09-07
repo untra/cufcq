@@ -34,8 +34,8 @@ task :import => :environment do
         f = Fcq.create!(h)
 
         # given a new fcq object, create the instructor and course
-        i_params = { 'instructor_first' => f.instructor_first, "instructor_last" => f.instructor_last}
-        c_params = { 'course_title' => f.course_title, "crse" => f.crse, "subject" => f.subject}
+        i_params = { 'instructor_first' => f.instructor_first, "instructor_last" => f.instructor_last, "campus" => f.campus }
+        c_params = { 'course_title' => f.course_title, "crse" => f.crse, "subject" => f.subject, "campus" => f.campus}
 
         # fix for the phil1400 bug
         c_abridged_params = { 'crse' => f.crse, 'subject' => f.subject }
