@@ -4,12 +4,12 @@
 [![Build Status](https://travis-ci.org/cufcq/cufcq.svg?branch=master)](https://travis-ci.org/cufcq/cufcq)
 ### What is an FCQ?
 
-An FCQ (Faculty Course questionnaire) is a survey maintained by CU and collected at the end of every course with the intent of rating instructor proficiency and gauging the quality of a class. It measures a variety of different criteria like:
+The FCQ (Faculty Course questionnaire) is a survey maintained by CU and collected at the end of every course with the intent of rating instructor proficiency and measuring classroom quality. It measures a variety of different criteria like:
 * How effective was a teacher at generating interest in a subject?
 * How many hours a week, on average, did students spend on a class?
 * How available was an instructor for the class?
 
-You can see a sample of an FCQ [here](http://www.colorado.edu/fcq/form/online06.html).
+You can see a sample of an FCQ [here](http://www.colorado.edu/fcq/form/online06.html)
 
 This is all fascinating info that we believe can inform students when it comes time to pick classes. Fortunately it's all publicly available at this [site](http://www.colorado.edu/fcq/) maintained by CU. This program takes the data, adds its to a database, draws connections between the FCQs, and formats it nicely using JS. You can see the a server running this at [cufcq.com](cufcq.com).
 
