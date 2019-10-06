@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150426181806) do
   enable_extension "plpgsql"
   enable_extension "hstore"
 
-  create_table "courses", force: true do |t|
+  create_table "courses", force: :cascade do |t|
     t.integer  "department_id"
     t.string   "course_title"
     t.integer  "crse"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150426181806) do
 
   add_index "courses", ["slug"], name: "index_courses_on_slug", using: :btree
 
-  create_table "departments", force: true do |t|
+  create_table "departments", force: :cascade do |t|
     t.string   "name"
     t.string   "college"
     t.string   "campus"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20150426181806) do
 
   add_index "departments", ["slug"], name: "index_departments_on_slug", using: :btree
 
-  create_table "fcqs", force: true do |t|
+  create_table "fcqs", force: :cascade do |t|
     t.integer  "instructor_id"
     t.integer  "course_id"
     t.integer  "department_id"
@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(version: 20150426181806) do
 
   add_index "fcqs", ["instructor_first", "instructor_last"], name: "index_fcqs_on_instructor_first_and_instructor_last", using: :btree
 
-  create_table "instructors", force: true do |t|
+  create_table "instructors", force: :cascade do |t|
     t.integer  "department_id"
     t.string   "instructor_first"
     t.string   "instructor_last"

@@ -2,8 +2,22 @@ version: '3'
 services:
   db:
     image: postgres
+    ports:
+        - "5432:5432"
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+  solr:
+    image: solr:7.0.1
+    ports:
+      - "8983:8983"
+    volumes:
+      - ./tmp/solr:/var/solr/server/solr/mycores
+    command:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - default
+    depends_on:
+      - db
   web:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"

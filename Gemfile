@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.4.9'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.2.11'
+
 # gem 'bootstrap-sass', '2.3.2.0'
 # Use sqlite3 as the database for Active Record
 # group :development do
@@ -46,7 +47,7 @@ gem 'will_paginate', '~> 3.0.6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'pg'
+gem 'pg', '~> 0.11'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
