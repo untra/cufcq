@@ -7,7 +7,7 @@ Cufcq::Application.configure do
   config.cache_classes = false
 
   # serve static assets
-  config.serve_static_assets = false
+  config.serve_static_files = false
 
   # Do not eager load code on boot.
   config.eager_load = false
