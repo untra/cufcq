@@ -7,12 +7,11 @@
 echo "I SHOULD BE RUNNING ON THE DEV SERVER"
 echo "Starting/Reindexing Solr"
 
-pkill -f server 
+export RAILS_ENV=production
 
-rake sunspot:solr:start RAILS_ENV=development
-rake sunspot:solr:reindex RAILS_ENV=development
+rake sunspot:solr:reindex
 
 echo "Solr successful! Starting Rails" 
 
-rails server -b 0.0.0.0 -p 80 -d &
+rails server -b 0.0.0.0 -p 3000
 

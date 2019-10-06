@@ -10,8 +10,8 @@ COPY . /myapp
 # Add a script to be executed every time the container starts.
 COPY scripts/launch.sh /usr/bin/
 RUN chmod +x /usr/bin/launch.sh
-ENTRYPOINT ["launch.sh"]
 EXPOSE 3000
-
 # Start the main process.
-CMD ["rails", "server", "-b", "0.0.0.0"]
+ENTRYPOINT ["launch.sh"]
+
+

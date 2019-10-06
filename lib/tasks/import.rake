@@ -242,7 +242,6 @@ task :ic_relations => :environment do
         dep_params = {"name" => f.subject, "college" => f.college, "campus" => f.campus}
         c = Course.where(params).first
         d = Department.where(dep_params).first
-        d = Department.where(dep_params).first
         if c.nil?
           next
         elsif d.nil?

@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -x
 
 #kill solr process
 # pkill -f solr
@@ -26,16 +26,17 @@ export RAILS_ENV=production
 echo "💎 About to reload data for environment $RAILS_ENV"
 
 #all of our rake tasks
-# echo "🍒 rake rake sunspot:solr:start"
-# bundle exec rake sunspot:solr:start
-echo "🍒 rake rake db:create"
-bundle exec rake db:create
-echo "🍒 rake rake db:reset"
-bundle exec rake db:reset
-echo "🍒 rake rake db:migrate"
-bundle exec rake db:migrate
+
+# echo "🍒 rake rake db:create"
+# bundle exec rake db:create
+# echo "🍒 rake rake db:reset"
+# bundle exec rake db:reset
+# echo "🍒 rake rake db:migrate"
+# bundle exec rake db:migrate
 echo "🍒 rake rake departments"
 bundle exec rake departments
+echo "solr reindex"
+bundle exec rake sunspot:solr:reindex
 echo "🍒 rake rake import"
 bundle exec rake import
 echo "🍒 rake rake course_titles"
