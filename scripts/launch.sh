@@ -12,8 +12,8 @@ echo "FFFFFF"
 echo "🍉 PREPARING TO RELOAD IT ALL"
 sleep 10
 
-# ./scripts/total_reload.sh
+./scripts/total_reload.sh
 
-echo "Starting server."
-rails server -b 0.0.0.0 -p 3000
-echo "Server daemon started. "
+# echo "Starting server."
+# rails server -b 0.0.0.0 -p 3000
+# echo "Server daemon started. "
