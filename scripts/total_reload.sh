@@ -45,7 +45,7 @@ echo "🍒 rake rake ic_relations"
 bundle exec rake ic_relations
 echo "🍒 rake rake grades"
 bundle exec rake grades
-# build the hstore for departments
+
 echo "🍒 rake instructor_build_hstore"
 bundle exec rake instructor_build_hstore
 echo "🍒 rake course_build_hstore"
@@ -60,8 +60,8 @@ bundle exec rake department_correction
 bundle exec rake course_names
 bundle exec rake course_missing_hstore
 
-#removes certain names from the project because they don't like it
+# removes certain names from the project because they don't like it
 bundle exec rake remove
 
-#reindex solr
+# reindex solr
 bundle exec rake sunspot:solr:reindex
