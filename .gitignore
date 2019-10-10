@@ -36,3 +36,7 @@ solr/test
 
 *.DS_Store
 Gemfile.lock
+
+.dbcreated
+.dbindexed
+.dbseeded
