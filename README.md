@@ -43,8 +43,3 @@ We also tie in grade data, provided separately in gradesall.xlsx to individual F
 You can create csv files from the excel documents from the FCQ website using data/csv_maker.sh, this requires ssconvert which is a gnumeric application. Put the final csv files into to the data/output directory.
 
 All files that end in .csv in data/output are imported using the import script. This script is found in lib/tasks/import.rake
-
-###API Endpoints:
-
-You can see the json returned for instructors and courses in ```doc/```
-TODO - Add in more documentation for our endpoints.
