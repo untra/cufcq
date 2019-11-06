@@ -7,5 +7,5 @@ echo "DEVELOPMENT MODE"
 
 echo "Solr successful! Starting Rails"
 
-rails server -b localhost -p 3000
+rails server -b localhost -p 3333
 echo "rails server closed!"

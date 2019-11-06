@@ -13,4 +13,4 @@ rake sunspot:solr:reindex
 
 echo "Solr successful! Starting Rails" 
 
-rails server -b 0.0.0.0 -p 3000 -e production
+rails server -b 0.0.0.0 -p 3333 -e production

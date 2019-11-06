@@ -20,11 +20,11 @@ services:
       - db
   web:
     build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails -p 3000 -b '0.0.0.0'"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails -p 3333 -b '0.0.0.0'"
     volumes:
       - .:/myapp
     ports:
-      - "3000:3000"
+      - "3333:3333"
     depends_on:
       - db
     

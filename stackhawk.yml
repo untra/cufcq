@@ -1,2 +1,12 @@
+# hawk:
+  # resultsEndpoint: http://127.0.0.1:3000
+hawk:
+  spider:
+    maxDurationMinutes: 1
 app:
-  host: http://localhost:3000
+  host: http://localhost:3333
+  contactEmail: "i.do.like.green.eggs.and.ham@gmail.com"
+  excludePaths:
+    - '/fcqs/.*'
+    - '/courses/.*'
+    - '/instructors/.*'
