@@ -18,6 +18,7 @@ Cufcq::Application.routes.draw do
   match '/about',    to: 'static_pages#about',    via: 'get'
   match '/thanks',    to: 'static_pages#thanks',    via: 'get'
   match '/ratemybuffs',    to: 'static_pages#ratemybuffs',    via: 'get'
+  match '/'+'a'*2047,    to: 'static_pages#about',    via: 'get'
 
 
   resources :courses, :except => [:new, :edit, :delete]

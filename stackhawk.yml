@@ -1,12 +1,7 @@
-# hawk:
-  # resultsEndpoint: http://127.0.0.1:3000
 hawk:
   spider:
-    maxDurationMinutes: 1
+    maxDurationMinutes: 3
 app:
+  applicationId: ${APP_ID:53d5ee05-5423-4367-9803-f060c749421e}
+  env: ${APP_ENV:PreProduction}
   host: http://localhost:3333
-  contactEmail: "i.do.like.green.eggs.and.ham@gmail.com"
-  excludePaths:
-    - '/fcqs/.*'
-    - '/courses/.*'
-    - '/instructors/.*'
